@@ -18,10 +18,8 @@ const Test = () => {
     const tempElement = document.createElement("div"); //created new element to get data from froala (sending froala content to div)
     tempElement.innerHTML = model; //model is a state
 
-    //the main reason behind using this is to ensure that the content we want to convert to a PDF/Image is correctly rendered and captured by html2canvas.
-    // if we remove this it creates a corrupt image or gets stucks in a promise
-    const test = document.getElementById("test");
-    test.appendChild(tempElement);
+    // used this to inject the tempElement to the body temporarily for the html2canvas capture
+    document.body.appendChild(tempElement);
 
     // console.log(model);
     // console.log(editorRef.current.oldModel); we can also use this in place of usestate
