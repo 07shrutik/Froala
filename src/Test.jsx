@@ -36,6 +36,8 @@ const Test = () => {
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
     pdf.addImage(imageData, "JPEG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("Froala_Content.pdf");
+    // used this to remove that tempElement from UI
+    document.body.removeChild(tempElement);
   };
 
   return (
